@@ -2,5 +2,8 @@
 
 public enum Lane
 {
-    Left, MiddleLeft, MiddleRight, Right
+    Left,
+    MiddleLeft,
+    MiddleRight,
+    Right
 }

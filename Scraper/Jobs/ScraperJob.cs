@@ -4,13 +4,13 @@ using BeatSaverScraper.Models;
 using CsvHelper;
 using Scraper.Interfaces;
 
-namespace Scraper;
+namespace Scraper.Jobs;
 
-public class ScraperRunnable : IRunnable
+public class ScraperJob : IJob
 {
     private readonly BeatSaverScraperService _beatSaverScraperService;
 
-    public ScraperRunnable(BeatSaverScraperService beatSaverScraperService)
+    public ScraperJob(BeatSaverScraperService beatSaverScraperService)
     {
         _beatSaverScraperService = beatSaverScraperService;
     }
