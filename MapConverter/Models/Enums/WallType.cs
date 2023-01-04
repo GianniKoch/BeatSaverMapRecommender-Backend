@@ -2,5 +2,6 @@
 
 public enum WallType
 {
-    Full, Duck
+    Full,
+    Duck
 }

@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BeatSaverScraper\BeatSaverScraper.csproj" />
+      <ProjectReference Include="..\MapConverter\MapConverter.csproj" />
     </ItemGroup>
 
     <ItemGroup>

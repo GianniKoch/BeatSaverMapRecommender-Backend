@@ -1,19 +1,22 @@
-﻿using MapConverter.Models.Enums;
+﻿using System.Text.Json.Serialization;
+using MapConverter.Models.Enums;
 
 namespace MapConverter.Models;
 
 public class Notes
 {
+    [JsonPropertyName("_time")]
     public double Time { get; set; }
     
-    // LineIndex
+    [JsonPropertyName("_lineIndex")]
     public Lane Lane { get; set; }
     
-    // LineLayer
+    [JsonPropertyName("_lineLayer")]
     public Row Row { get; set; }
     
-    // Type
+    [JsonPropertyName("_type")]
     public Color Color { get; set; }
     
-    public int CutDirection { get; set; }
+    [JsonPropertyName("_cutDirection")]
+    public Direction Direction { get; set; }
 }

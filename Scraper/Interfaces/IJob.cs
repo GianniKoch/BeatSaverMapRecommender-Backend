@@ -1,6 +1,6 @@
 ﻿namespace Scraper.Interfaces;
 
-public interface IRunnable
+public interface IJob
 {
     Task RunAsync();
 }

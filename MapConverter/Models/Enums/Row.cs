@@ -2,5 +2,7 @@
 
 public enum Row
 {
-    Bottom, Middle, Top
+    Bottom,
+    Middle,
+    Top
 }
