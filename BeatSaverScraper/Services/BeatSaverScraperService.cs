@@ -1,8 +1,7 @@
 ﻿using BeatSaverScraper.Extensions;
 using BeatSaverScraper.Models;
-using BeatSaverScraper.Services;
 
-namespace BeatSaverScraper;
+namespace BeatSaverScraper.Services;
 
 public class BeatSaverScraperService
 {
