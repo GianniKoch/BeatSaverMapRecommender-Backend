@@ -21,6 +21,8 @@ builder.Services.AddSingleton<IConstantsBeatSaverScraper>(provider => provider.G
 builder.Services.AddBeatSaverScraper();
 builder.Services.AddMapConverter();
 
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +33,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors(options =>
+{
+    options.AllowAnyOrigin();
+    options.AllowAnyHeader();
+    options.AllowAnyMethod();
+});
 app.MapControllers();
 
 app.Run();

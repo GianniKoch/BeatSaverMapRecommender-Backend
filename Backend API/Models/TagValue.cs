@@ -3,5 +3,5 @@
 public class TagValue
 {
     public string Tag { get; set; } = string.Empty;
-    public float Value { get; set; }
+    public int Value { get; set; }
 }

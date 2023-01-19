@@ -6,18 +6,26 @@ namespace Backend_API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SectionController
+public class SectionController : ControllerBase
 {
-    private readonly ISectionService sectionService;
+    private readonly ISectionService _sectionService;
 
     public SectionController(ISectionService sectionService)
     {
-        this.sectionService = sectionService;
+        _sectionService = sectionService;
     }
 
     [HttpGet]
-    public async Task<Section> NextSection()
+    public async Task<IActionResult> GetSection()
     {
-        return await sectionService.GetRandomSectionAsync();
+        var section = await _sectionService.GetRandomSectionAsync();
+        return Ok(section);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> PostTags([FromBody] TagValuesResponse tagValues)
+    {
+        await _sectionService.AddTagValues(tagValues);
+        return Ok();
     }
 }
