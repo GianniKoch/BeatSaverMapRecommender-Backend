@@ -1,6 +1,6 @@
 ﻿using Backend_API.Interfaces;
-using Backend_API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Persistence.Models;
 
 namespace Backend_API.Controllers;
 
@@ -20,6 +20,13 @@ public class SectionController : ControllerBase
     {
         var section = await _sectionService.GetRandomSectionAsync();
         return Ok(section);
+    }
+
+    [HttpGet("/Sections")]
+    public async Task<IActionResult> GetSections()
+    {
+        var sections = await _sectionService.GetAllSections();
+        return Ok(sections);
     }
 
     [HttpPost]

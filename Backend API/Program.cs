@@ -4,6 +4,7 @@ using Backend_API.Services;
 using BeatSaverScraper.Extensions;
 using BeatSaverScraper.Interfaces;
 using MapConverter.Extensions;
+using Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddPersistence();
 
 builder.Services.AddSingleton<ISectionService, SectionService>();
 

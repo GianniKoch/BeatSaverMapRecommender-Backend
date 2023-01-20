@@ -15,6 +15,7 @@
     <ItemGroup>
       <ProjectReference Include="..\BeatSaverScraper\BeatSaverScraper.csproj" />
       <ProjectReference Include="..\MapConverter\MapConverter.csproj" />
+      <ProjectReference Include="..\Persistence\Persistence.csproj" />
     </ItemGroup>
 
 </Project>

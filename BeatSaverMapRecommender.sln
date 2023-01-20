@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapConverter", "MapConverte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend API", "Backend API\Backend API.csproj", "{5FEBB329-FDF2-427C-AED5-9DB2D902BCD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{F2262C66-3930-4EA5-89EF-65A060625303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5FEBB329-FDF2-427C-AED5-9DB2D902BCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FEBB329-FDF2-427C-AED5-9DB2D902BCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FEBB329-FDF2-427C-AED5-9DB2D902BCD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2262C66-3930-4EA5-89EF-65A060625303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2262C66-3930-4EA5-89EF-65A060625303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2262C66-3930-4EA5-89EF-65A060625303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2262C66-3930-4EA5-89EF-65A060625303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
