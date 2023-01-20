@@ -50,8 +50,16 @@ public class SectionService : ISectionService
 
     public async Task AddTagValues(TagValuesResponse response)
     {
-        var sumTags = response.Tags!.Sum(t => t.Value);
-        response.Tags.ForEach(t => t.Value /= sumTags);
+        
+        if (response.Tags == null) return;
+        var sumTags = response.Tags.Sum(t => t.Value);
+        if (sumTags == 0) return;
+        // If the sum needs to be in between 0 and 1.
+        // response.Tags = response.Tags.Select(t =>
+        // {
+        //     t.Value /= sumTags;
+        //     return t;
+        // }).ToList();
         await _repository.Save(response);
     }
 
