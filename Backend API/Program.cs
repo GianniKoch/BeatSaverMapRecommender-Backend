@@ -6,6 +6,10 @@ using BeatSaverScraper.Interfaces;
 using MapConverter.Extensions;
 using Persistence.Extensions;
 
+/*
+ * docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+ */
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,9 +19,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddPersistence();
+builder.Services.AddPersistence(builder.Configuration.GetConnectionString("Default"));
 
-builder.Services.AddSingleton<ISectionService, SectionService>();
+builder.Services.AddScoped<ISectionService, SectionService>();
 
 builder.Services.AddSingleton<Constants>();
 builder.Services.AddSingleton<IConstantsBeatSaverScraper>(provider => provider.GetRequiredService<Constants>());

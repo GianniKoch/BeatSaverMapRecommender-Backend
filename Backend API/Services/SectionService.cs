@@ -37,11 +37,10 @@ public class SectionService : ISectionService
             var randomId = GetNewRandomMapId(latestBeatMap.ID);
             map = await _beatSaverClient.Beatmap(randomId);
             difficulty = map?.LatestVersion.Difficulties.MaxBy(x => x.Difficulty);
-        } 
-        while (map == null || difficulty is not { Seconds: > 30 });
+        } while (map == null || difficulty is not { Seconds: > 30 });
 
         var startNote = new Random().Next(15, (int)(difficulty.Seconds - 15));
-        
+
         return new Section
         {
             BeatMapId = map.ID,
@@ -51,12 +50,14 @@ public class SectionService : ISectionService
 
     public async Task AddTagValues(TagValuesResponse response)
     {
-        _repository.Save(response);
+        var sumTags = response.Tags!.Sum(t => t.Value);
+        response.Tags.ForEach(t => t.Value /= sumTags);
+        await _repository.Save(response);
     }
 
-    public async Task<List<TagValuesResponse>> GetAllSections()
+    public async Task<IReadOnlyList<TagValuesResponse>> GetAllSections()
     {
-        return _repository.ReadAll();
+        return await _repository.ReadAll();
     }
 
 
