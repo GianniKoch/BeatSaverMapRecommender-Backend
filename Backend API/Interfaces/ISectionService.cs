@@ -6,5 +6,5 @@ public interface ISectionService
 {
     Task<Section> GetRandomSectionAsync();
     Task AddTagValues(TagValuesResponse response);
-    Task<List<TagValuesResponse>> GetAllSections();
+    Task<IReadOnlyList<TagValuesResponse>> GetAllSections();
 }

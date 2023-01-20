@@ -4,6 +4,6 @@ namespace Persistence.Interfaces;
 
 public interface ITagValueResponseRepository
 {
-    TagValuesResponse Save(TagValuesResponse section);
-    List<TagValuesResponse> ReadAll();
+    Task<TagValuesResponse> Save(TagValuesResponse section);
+    Task<IReadOnlyList<TagValuesResponse>> ReadAll();
 }
