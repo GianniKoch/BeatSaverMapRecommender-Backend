@@ -1,16 +1,19 @@
 ﻿using Backend_API.Interfaces;
-using Backend_API.Models;
 using BeatSaverSharp;
 using BeatSaverSharp.Models;
+using Persistence.Interfaces;
+using Persistence.Models;
 
 namespace Backend_API.Services;
 
 public class SectionService : ISectionService
 {
     private readonly BeatSaver _beatSaverClient;
+    private readonly ITagValueResponseRepository _repository;
 
-    public SectionService()
+    public SectionService(ITagValueResponseRepository repository)
     {
+        _repository = repository;
         var beatSaverClientOptions =
             new BeatSaverOptions("MapRecommender", typeof(Constants).Assembly.GetName().Version!)
             {
@@ -48,7 +51,12 @@ public class SectionService : ISectionService
 
     public async Task AddTagValues(TagValuesResponse response)
     {
-        Console.WriteLine(response);
+        _repository.Save(response);
+    }
+
+    public async Task<List<TagValuesResponse>> GetAllSections()
+    {
+        return _repository.ReadAll();
     }
 
 

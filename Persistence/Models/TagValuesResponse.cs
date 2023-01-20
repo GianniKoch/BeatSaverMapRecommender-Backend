@@ -1,4 +1,4 @@
-﻿namespace Backend_API.Models;
+﻿namespace Persistence.Models;
 
 public class TagValuesResponse
 {
