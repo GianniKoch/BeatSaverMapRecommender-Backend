@@ -36,8 +36,9 @@ public class SectionService : ISectionService
 
             var randomId = GetNewRandomMapId(latestBeatMap.ID);
             map = await _beatSaverClient.Beatmap(randomId);
+            
             difficulty = map?.LatestVersion.Difficulties.MaxBy(x => x.Difficulty);
-        } while (map == null || difficulty is not { Seconds: > 30 });
+        } while (map == null || map.Automapper || difficulty is not { Seconds: > 30 });
 
         var startNote = new Random().Next(15, (int)(difficulty.Seconds - 15));
 
