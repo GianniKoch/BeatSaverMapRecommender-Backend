@@ -13,6 +13,16 @@ public class MapInfo
     public required string UploaderName { get; set; }
 
     /// <summary>
+    /// Name of the BeatSaver Map.
+    /// </summary>
+    public required string MapName { get; set; }
+
+    /// <summary>
+    /// Url of the cover.
+    /// </summary>
+    public required string CoverUrl { get; set; }
+    
+    /// <summary>
     /// The duration of the map.
     /// </summary>
     public required int Duration { get; set; }

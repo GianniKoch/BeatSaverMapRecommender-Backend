@@ -20,6 +20,8 @@ public static class BeatMapExtensions
             MapInfo = new MapInfo
             {
                 BeatMapId = beatMap.ID,
+                MapName = beatMap.Name,
+                CoverUrl = beatMap.LatestVersion.CoverURL,
                 UploaderName = beatMap.Uploader.Name,
                 Duration = beatMap.Metadata.Duration,
                 Bpm = beatMap.Metadata.BPM,

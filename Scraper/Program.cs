@@ -11,11 +11,11 @@ var host = Host.CreateDefaultBuilder()
     {
         sc.AddSingleton<Constants>();
         sc.AddSingleton<IConstantsBeatSaverScraper>(provider => provider.GetRequiredService<Constants>());
-        // sc.AddBeatSaverScraper();
-        sc.AddMapConverter();
+        sc.AddBeatSaverScraper();
+        // sc.AddMapConverter();
     })
     .Build();
 
-// var ss = ActivatorUtilities.CreateInstance<ScraperJob>(host.Services);
-var ss = ActivatorUtilities.CreateInstance<MapConverterJob>(host.Services);
+var ss = ActivatorUtilities.CreateInstance<ScraperJob>(host.Services);
+// var ss = ActivatorUtilities.CreateInstance<MapConverterJob>(host.Services);
 await ss.RunAsync();
